@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "backend",
   "scripts": {
     "dev": "wrangler dev",
@@ -15,4 +16,27 @@
     "@cloudflare/workers-types": "^4.20250214.0",
     "wrangler": "^4.4.0"
   }
+=======
+  "name": "@rilini/medium-common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error:no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "publishConfig": {
+  "access": "public"
+}
+
+>>>>>>> c3855f2 (Add common folder code)
 }
