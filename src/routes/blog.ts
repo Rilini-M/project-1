@@ -7,7 +7,8 @@ import { createBlogInput, updateBlogInput } from '@rilini/medium-common'
 //rilini/medium-common is my own package
 
 
-export const blogRouter = new Hono<{
+
+export const blogRouter = new Hono<{ 
     Bindings:{
         DATABASE_URL: string,
         JWT_SECRET: string,
@@ -83,7 +84,7 @@ return c.json({
          
      }
  })
- return c.json({
+ return c.json({    //id of blog creator
      id:blog.id
  })
   })
