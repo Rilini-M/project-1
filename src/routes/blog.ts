@@ -4,7 +4,7 @@ import { Hono } from 'hono'
 import { verify } from 'hono/jwt'
 import { createBlogInput, updateBlogInput } from '@rilini/medium-common'
 
-
+//rilini/medium-common is my own package
 
 
 export const blogRouter = new Hono<{
@@ -93,7 +93,18 @@ return c.json({
     const prisma= new PrismaClient({
         datasourceUrl:c.env.DATABASE_URL,
     }).$extends(withAccelerate())
-    const blogs= await prisma.blog.findMany();
+    const blogs= await prisma.blog.findMany({
+        select:{
+            content:true,
+            title:true,
+            id:true,
+            author:{
+                select:{
+                    name:true,
+            }
+        }
+    }
+    });
 
     return c.json({
         blogs
